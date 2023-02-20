@@ -1,0 +1,64 @@
+import React from "react";
+import Select from "react-select";
+import { useController, useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
+
+const roomOptions = [
+    { value: "beginner", label: "Beginner" },
+    { value: "intermediate", label: "Intermediate"},
+    { value: "expert", label: "Expert"},
+]
+
+function Home(props) {
+
+    const {handleSubmit, register, formsState, setError, control} = useForm({mode: 'onTouched'})
+
+    const { field } = useController({ name: "room", control});
+
+    const {errors, isSubmitting, isSubmitted, isSubmitSuccessful} = formsState;
+    const navigate = useNavigate();
+
+    const handleSelectChange = (option) => {
+        field.onChange(option.value);
+    };
+    
+    const onSubmit = async data => {
+        const { username, room } = data;
+        if (isSubmitSuccessful) {
+            navigate('/chat', {state:{username, room}})
+        }
+    }
+    
+    return (
+    <>
+        <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+            <h1> Let's chat</h1>
+            {isSubmitSuccessful && <div className="">Thank you for your subscribing</div>}
+            <label for="username"><strong>username</strong></label>
+            <input
+                className="form-field"
+                type="text"
+                {...register("username"), {required: "Please enter a firstname", 
+                 value: 2, message: 'Minimum length should be 2'}}
+                placeholder="username"
+                name="username"
+            />
+            {errors.name && <span>{errors.firstName.message}</span>}
+
+            <label for="room"><strong>room</strong></label>
+            <Select
+                value={roomOptions.find(({value}) => value === field.value)}
+                onChange={handleSelectChange}
+                options={countrySelectChange}
+            />
+            {errors.name && <span>{errors.lastName.message}</span>}
+            <button type="submit" className="submit-button" disabled={isSubmitting}>
+                Start chat
+            </button>
+        </form>
+        
+    </>
+    )
+}
+
+export default Home;

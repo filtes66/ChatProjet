@@ -1,0 +1,32 @@
+.header__nav {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #0000;
+  list-style-type: none;
+}
+
+.header__note {
+  left: 10px;
+  color: #f30a0a;
+  font-weight: 600;
+  font-size: 1rem;
+  position: absolute;
+}
+
+.header__icon {
+}
+
+.header__item {
+  margin: 0 20px 0 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #625751;
+  text-decoration: inherit;
+}

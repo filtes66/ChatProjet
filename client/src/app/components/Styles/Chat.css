@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    width:750px;
+    height:800px;
+    background:#eff3f7;
+    margin:0 auto;
+    font-size:0;
+    border-radius:5px;
+    overflow: hidden;
+}
