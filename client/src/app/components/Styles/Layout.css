@@ -1,7 +1,9 @@
-.layout1 {
-  background-color: #f4f4f4;
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.layout2 {
-  background-color: #ffffff;
+.layout_body {
+  flex: 1;
 }
