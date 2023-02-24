@@ -84,7 +84,20 @@ input[type="email"] {
   -moz-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
-  -webkit-animation: fixedChatweeWindowSwitchCircleEffect 15s ease-out infinite;
-  -moz-animation: fixedChatweeWindowSwitchCircleEffect 15s ease-out infinite;
+  -webkit-animation: chatSwitchScaleEffect 15s ease-out infinite;
+  -moz-animation: chatSwitchScaleEffect 15s ease-out infinite;
   animation: chatSwitchScaleEffect 15s ease-out infinite;
+}
+
+@keyframes ChatSwitchScaleEffect {
+  0% {
+    transform: scale(1);
+  }
+  2% {
+    transform: scale(0.9);
+  }
+  10%,
+  100% {
+    transform: scale(1);
+  }
 }
