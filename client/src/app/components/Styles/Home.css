@@ -1,0 +1,90 @@
+.register-form {
+  display: flex;
+  justify-content: center;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 15px;
+  border: 5px, solid #f1f1f1;
+}
+
+.register-form input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 16px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.register-form button {
+  background-color: #8ebf42;
+  color: white;
+  padding: 14px 0;
+  margin: 10px 0;
+  border: none;
+  cursor: grabbing;
+  width: 100%;
+}
+
+.register-form h1 {
+  text-align: center;
+  font-size: 18;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.home__switchChat {
+  bottom: 0px;
+  right: 0px;
+  border: none;
+  cursor: pointer;
+  margin: 12px;
+  padding: 18px;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 60%);
+  width: 70px;
+  height: 70px;
+  box-sizing: border-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+}
+
+.home__switchChatAnimated {
+  animation-duration: 15s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: chatSwitchScaleEffect;
+}
+
+.home__switchChatAnimated::after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: "";
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: -1;
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 50%), 0 0 0 2px rgb(0 0 0 / 10%);
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-animation: fixedChatweeWindowSwitchCircleEffect 15s ease-out infinite;
+  -moz-animation: fixedChatweeWindowSwitchCircleEffect 15s ease-out infinite;
+  animation: chatSwitchScaleEffect 15s ease-out infinite;
+}
